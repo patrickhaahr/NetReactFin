@@ -3,6 +3,7 @@ import { CompanyCashFlow } from "../../company";
 import { useEffect, useState } from "react";
 import { getCashFlowStatement } from "../../api";
 import Table from "../Table/Table";
+import Spinner from "../Spinner/Spinner";
 
 type Props = {};
 
@@ -58,7 +59,7 @@ const CashFlowStatement = (props: Props) => {
       {cashflowData ? (
         <Table config={config} data={cashflowData} />
       ) : (
-        <h1>No results!</h1>
+        <Spinner />
       )}
     </>
   );
